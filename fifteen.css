@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+}
+
+h1,
+p {
+    font-size: 24px;
+    color: red;
+    text-align: center;
+}
+
+.container {
+    padding-top: 12rem;
+
+}
+
+#game {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
+#board {
+    height: 400px;
+    padding: 0px;
+    position: relative;
+    width: 400px;
+}
+
+#button {
+    border: none;
+    width: 400px;
+    height: 70px;
+    font-weight: bold;
+    background: lightblue;
+    color: black;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+
+}
+
+#button:hover {
+    color: lightblue;
+    border: lightblue solid 1px;
+    background: #fff;
+}
+
+
+
+.tile {
+    background-image: url(background.jpg);
+    border: 2px solid black;
+    height: 100px;
+    line-height: 100px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.moveableTile {
+    background-image: url(background.jpg);
+    border: 2px solid red;
+    color: #006600;
+    text-decoration: underline;
+    height: 100px;
+    line-height: 100px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.winShow {
+    color: red;
+    font-size: 50px;
+    position: relative;
+    width: 50%;
+    text-align: right;
+}

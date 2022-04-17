@@ -14,6 +14,12 @@ p {
 
 }
 
+#text{
+    font-family: 'Courier New';
+    font-weight: bold;
+    font-size: 50px;
+}
+
 #game {
     margin-left: auto;
     margin-right: auto;
@@ -64,8 +70,8 @@ p {
 
 .moveableTile {
     background-image: url(background.jpg);
-    border: 2px solid red;
-    color: #006600;
+    border: 2px solid white;
+    color: white;
     text-decoration: underline;
     height: 100px;
     line-height: 100px;
@@ -73,6 +79,7 @@ p {
     text-align: center;
     vertical-align: middle;
     width: 100px;
+    cursor: pointer;
 }
 
 .winShow {

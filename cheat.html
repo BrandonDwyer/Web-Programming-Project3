@@ -3,16 +3,15 @@
 <head>
     <title>Fifteen Puzzle</title>
     <link href="fifteen.css" type="text/css" rel="stylesheet" />
-    <script src="fifteen.js" type="text/javascript"></script>
+        <script src="fifteen.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <div class="container">
         <h1>Fifteen Puzzle</h1>
         <p id='rules'>
-            Can you solve this puzzle as quick as possible ?
-        </p>
-        <div id="game">
+            <div id="game">
             <div id="board">
                 <div id="text">1</div>
                 <div id="text">2</div>
@@ -30,15 +29,14 @@
                 <div id="text">14</div>
                 <div id="text">15</div>
             </div>
-            <br>
-            <button id="button">SHUFFLE</button>
-           <a href="cheat.html"> <button id="button">CHEAT</button> </a>
+    <script>
 
-        </div>
-        <div id="validators">
-            <a href="//validator.w3.org/check/referer"><img src="//www.cs.washington.edu/education/courses/cse190m/09sp/images/w3c-xhtml.png" alt="Valid XHTML 1.1" /></a>
-            <a href="//jigsaw.w3.org/css-validator/check/referer"><img src="//www.cs.washington.edu/education/courses/cse190m/09sp/images/w3c-css.png" alt="Valid CSS" /></a>
-            <a href="//webster.cs.washington.edu/jslint/"><img src="//www.cs.washington.edu/education/courses/cse190m/09sp/images/jslint.png" alt="JavaScript Lint" /></a>
+    document.body.style.background = "url('win.jpg')";
+    document.getElementById('rules').className = "winShow";
+    document.getElementById('rules').innerHTML = "Congrats you just won the game!!";
+
+
+    </script>
         </div>
 
     </div>

@@ -107,28 +107,26 @@ window.onload = function () {
 			
 			switch(randomNumber) {
 				  case 0:
-				    // code block
 				    var t = up(x, y);
 				if (t != -1) {
 					change(t);
 				}
 				    break;
 				  case 1:
-				    // code block
+				 
 				    var t = down(x, y);
 				if (t != -1) {
 					change(t);
 				}
 				    break;
 				  case 2:
-				    // code block
 				    var t = left(x, y);
 				if (t != -1) {
 					change(t);
 				}
 				    break;
 				  case 3:
-				    // code block
+				   
 				    var t = right(x, y);
 				if (t != -1) {
 					change(t);

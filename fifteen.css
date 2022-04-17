@@ -82,6 +82,11 @@ p {
     cursor: pointer;
 }
 
+#validators {
+    text-align: right;
+    float: right;
+}
+
 .winShow {
     color: red;
     font-size: 50px;

@@ -1,15 +1,15 @@
-var card;
-var y;
-var x;
+var card, y, x;
 
 function left(x, y) {
 	var one = parseInt(x);
 	var two = parseInt(y);
 	if (one > 0) {
-		for (var i = 0; i < card.length; i++) {
+		var i = 0;
+		while(i < card.length){
 			if (parseInt(card[i].style.left) + 100 == one && parseInt(card[i].style.top) == two) {
 				return i;
 			}
+			i++;
 		}
 	}
 	else {
@@ -104,30 +104,38 @@ window.onload = function () {
 	document.getElementById('button').onclick = function () {
 		for (var i = 0; i < 300; i++) {
 			var randomNumber = parseInt(Math.random() * 100) % 4; // generating random number
-			if (randomNumber == 0) {
-				var t = up(x, y);
+			
+			switch(randomNumber) {
+				  case 0:
+				    // code block
+				    var t = up(x, y);
 				if (t != -1) {
 					change(t);
 				}
-			}
-			if (randomNumber == 1) {
-				var t = down(x, y);
+				    break;
+				  case 1:
+				    // code block
+				    var t = down(x, y);
 				if (t != -1) {
 					change(t);
 				}
-			}
-			if (randomNumber == 2) {
-				var t = left(x, y);
+				    break;
+				  case 2:
+				    // code block
+				    var t = left(x, y);
 				if (t != -1) {
 					change(t);
 				}
-			}
-			if (randomNumber == 3) {
-				var t = right(x, y);
+				    break;
+				  case 3:
+				    // code block
+				    var t = right(x, y);
 				if (t != -1) {
 					change(t);
 				}
-			}
+				    break;
+				 
+				}
 
 		}
 	};

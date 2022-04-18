@@ -77,16 +77,36 @@ window.onload = function () {
 	startGame();
 };
 
+function imageChange() {
+	alert("Worked");
+}
+
 function startGame() {
 	var board = document.getElementById('board');
 	card = board.getElementsByTagName('div');
 	for (var i = 0; i < card.length; i++) {
 		card[i].style.left = (i % 4 * 100) + 'px';
 		card[i].style.top = (parseInt(i / 4) * 100) + 'px';
-		card[i].className = 'tile';
+		if(document.getElementById("select-image").value === "img1") {
+			card[i].className = 'tile';
+		} else if (document.getElementById("select-image").value === "img2"){
+			card[i].className = 'tile1';
+		} else if (document.getElementById("select-image").value === "img3"){
+			card[i].className = 'tile2';
+		} else {
+			card[i].className = 'tile3';
+		}
 		card[i].style.backgroundPosition = '-' + card[i].style.left + ' ' + '-' + card[i].style.top;
 		card[i].onmouseout = function () {
-			this.className = "tile";
+			if(document.getElementById("select-image").value === "img1") {
+				this.className = 'tile';
+			} else if (document.getElementById("select-image").value === "img2"){
+				this.className = 'tile1';
+			} else if (document.getElementById("select-image").value === "img3"){
+				this.className = 'tile2';
+			} else {
+				this.className = 'tile3';
+			}
 		};
 		card[i].onclick = function () {
 			if (move(parseInt(this.innerHTML))) {
@@ -99,7 +119,15 @@ function startGame() {
 		};
 		card[i].onmouseover = function () {
 			if (move(parseInt(this.innerHTML))) {
-				this.className = "moveableTile";
+				if(document.getElementById("select-image").value === "img1") {
+					this.className = 'moveableTile';
+				} else if (document.getElementById("select-image").value === "img2"){
+					this.className = 'moveableTile1';
+				} else if (document.getElementById("select-image").value === "img3"){
+					this.className = 'moveableTile2';
+				} else {
+					this.className = 'moveableTile3';
+				}
 			}
 		};
 	}
@@ -203,3 +231,4 @@ function done() {
 	}
 	return click;
 }
+

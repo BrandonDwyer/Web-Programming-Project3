@@ -72,6 +72,10 @@ function change(position) {
 
 // this is the main function
 window.onload = function () {
+	startGame();
+};
+
+function startGame() {
 	var board = document.getElementById('board');
 	card = board.getElementsByTagName('div');
 	for (var i = 0; i < card.length; i++) {
@@ -102,6 +106,20 @@ window.onload = function () {
 	y = '300px';
 
 	document.getElementById('button').onclick = function () {
+		var audio = document.getElementById("audio");
+		audio.volume = .1;
+        audio.play();
+		var element = document.getElementById("rules");
+  		element.classList.remove("winShow");
+		  d = new Date();
+		  d.setMinutes(0);
+		  d.setSeconds(0, 0);
+		  setInterval(function () {
+			document.getElementById("m").innerHTML = d.getMinutes();
+			document.getElementById("s").innerHTML = d.getSeconds();
+			d.setTime(d.getTime() + 1000);
+		  }, 1000);
+		document.getElementById('rules').innerHTML = "<span id='m'></span>:<span id='s'></span>";
 		for (var i = 0; i < 300; i++) {
 			var randomNumber = parseInt(Math.random() * 100) % 4; // generating random number
 			
@@ -137,7 +155,14 @@ window.onload = function () {
 
 		}
 	};
-};
+
+	document.getElementById('cheat').onclick = function () {
+		startGame();
+		win();
+		audio.pause();
+		audio.currentTime = 0;
+	};
+}
 
 function move(position) {
 	if (left(x, y) == (position - 1)) {
@@ -154,9 +179,8 @@ function move(position) {
 	}
 }
 function win() {
-	document.body.style.background = "url('win.jpg')";
 	document.getElementById('rules').className = "winShow";
-	document.getElementById('rules').innerHTML = "Congrats you just won the game!!";
+	document.getElementById('rules').innerHTML = "<span class='word congrats'>CONGRATULATIONS</span> <span class='word you'>YOU</span> <span class='word congrats'>WIN!</span>";
 }
 
 function done() {

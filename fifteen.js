@@ -1,4 +1,6 @@
 var card, y, x;
+var minutes = 0;
+var seconds = 0;
 
 function left(x, y) {
 	var one = parseInt(x);
@@ -106,6 +108,7 @@ function startGame() {
 	y = '300px';
 
 	document.getElementById('button').onclick = function () {
+		document.getElementById('time').innerHTML = "";
 		var audio = document.getElementById("audio");
 		audio.volume = .1;
         audio.play();
@@ -114,9 +117,11 @@ function startGame() {
 		  d = new Date();
 		  d.setMinutes(0);
 		  d.setSeconds(0, 0);
-		  setInterval(function () {
+		  var myInterval = setInterval(function () {
 			document.getElementById("m").innerHTML = d.getMinutes();
 			document.getElementById("s").innerHTML = d.getSeconds();
+			minutes = d.getMinutes();
+			seconds = d.getSeconds();
 			d.setTime(d.getTime() + 1000);
 		  }, 1000);
 		document.getElementById('rules').innerHTML = "<span id='m'></span>:<span id='s'></span>";
@@ -181,6 +186,8 @@ function move(position) {
 function win() {
 	document.getElementById('rules').className = "winShow";
 	document.getElementById('rules').innerHTML = "<span class='word congrats'>CONGRATULATIONS</span> <span class='word you'>YOU</span> <span class='word congrats'>WIN!</span>";
+	var time = "Your time was: " + minutes + ":" + seconds;
+	document.getElementById('time').innerHTML = time;
 }
 
 function done() {

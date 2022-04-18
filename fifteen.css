@@ -3,6 +3,7 @@ body {
 }
 
 h1,
+
 p {
     font-size: 24px;
     color: red;
@@ -10,8 +11,7 @@ p {
 }
 
 .container {
-    padding-top: 12rem;
-
+    padding-top: 6rem;
 }
 
 #text{
@@ -55,7 +55,27 @@ p {
     background: #fff;
 }
 
+#cheat {
+    border: none;
+    width: 400px;
+    height: 70px;
+    font-weight: bold;
+    background: lightblue;
+    color: black;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
 
+}
+
+#cheat:hover {
+    color: lightblue;
+    border: lightblue solid 1px;
+    background: #fff;
+}
 
 .tile {
     background-image: url(background.jpg);
@@ -70,7 +90,6 @@ p {
 
 .moveableTile {
     background-image: url(background.jpg);
-    border: 2px solid white;
     color: white;
     text-decoration: underline;
     height: 100px;
@@ -80,7 +99,7 @@ p {
     vertical-align: middle;
     width: 100px;
     cursor: pointer;
-   box-shadow: inset 0 0 0 25px #53a7ea;
+    box-shadow: inset 0 0 0 3px white;
 }
 
 #validators {
@@ -89,9 +108,32 @@ p {
 }
 
 .winShow {
-    color: red;
+    color: blue;
+    font-family: Impact;
     font-size: 50px;
-    position: relative;
-    width: 50%;
-    text-align: right;
+    text-align: center;
+}
+
+.word {
+    animation: color-animation 2s linear infinite;
+}
+
+.congrats {
+    --color-1: white;
+    --color-2: tomato;
+}
+
+.you {
+    --color-1:tomato;
+    --color-2: white;
+}
+
+@keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-1)}
+    99%   {color: var(--color-1)}
+    100%  {color: var(--color-1)}
 }

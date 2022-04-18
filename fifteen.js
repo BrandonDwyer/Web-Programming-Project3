@@ -1,6 +1,7 @@
 var card, y, x;
 var minutes = 0;
 var seconds = 0;
+var counter = 0;
 
 function left(x, y) {
 	var one = parseInt(x);
@@ -82,6 +83,7 @@ function imageChange() {
 }
 
 function startGame() {
+	counter = 1;
 	var board = document.getElementById('board');
 	card = board.getElementsByTagName('div');
 	for (var i = 0; i < card.length; i++) {
@@ -108,8 +110,10 @@ function startGame() {
 				this.className = 'tile3';
 			}
 		};
-		card[i].onclick = function () {
+		card[i].onclick = function () {			
+			yourMoves();
 			if (move(parseInt(this.innerHTML))) {
+				counter++;
 				change(this.innerHTML - 1);
 				if (done()) {
 					win();
@@ -232,3 +236,7 @@ function done() {
 	return click;
 }
 
+function yourMoves() {
+	var numMoves = "Moves: " + counter;
+	document.getElementById('moves').innerHTML = numMoves;
+}
